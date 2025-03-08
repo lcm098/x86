@@ -1,0 +1,3 @@
+nasm -f bin -o second.bin second.asm
+dd if=/dev/zero of=floppy.img bs=512 count=2880 && dd if=second.bin of=floppy.img conv=notrunc
+qemu-system-x86_64 -fda floppy.img
